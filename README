@@ -1,0 +1,46 @@
+The only thing we are going to sync is your vimrc.
+We will not sync Vundle bundles or even Vundles itself. We'll let Vundles manage all of that. So,
+don't let git manage your %HOME%/vimfiles/bundle folder, exclude it with .gitignore
+
+
+
+Installation:
+
+    To install this vim on a new computer, do:
+
+    setup an environment variable HOME which points to a directory for
+    example username\home\
+    
+    create "vimfiles" directory in %HOME% 
+
+    clone remote "vimfiles" content into your local vimfiles-dir
+
+    cd %HOME%
+    git clone git@github.com:ma65p/vim.git %HOME%/vimfiles
+
+
+    create a "vimrc" file in %HOME% that points to a "_vimrc" (that
+    actually contains all your settings) file 
+    in the "vimfiles"-directory
+
+    optionally if you have an extra gvimrc, you do the same thing with that file
+    REASON: Vim continues looking for "_vimrc"/"_gvimrc"
+
+    Then install Vundle for Windows by following the instructions
+    on the site https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows
+
+    Then open vim or mvim to install the bundles. Hopefully the warning disappear after bundles are installed
+
+    vim
+    :PluginInstall
+
+    Once all bundles are installed, restart vim or mvim to see the magic. Notes are left in the vimrc for guidance on what's happending
+
+General Notes
+
+    If plugins are not managed by bundles should be installed as submodule if is manged by git
+
+    git submodule add [git path] [local path]
+    
+    submodules explanation: keep a git repo inside a git repo
+
