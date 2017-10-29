@@ -1,13 +1,19 @@
+set nocompatible              " be iMproved, required
 "Steps to do for a new vimrc setup
 " - download/install vundle Plugin Manager
 " - download ctags
 " - ctags tags file generieren
 " - Set tags? 
+" - set tags+=<path> in vimrc file
 " - Umgebungsvariable HOME in Windows auf meine custom location setzen
 " - create backupFiles Directories for vim backup files and vim swp files
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"needs to be on so that vim gets filetype/syntax highlightening automatically
+filetype on                  " required
+"automatic syntax word completion with ctrl x, ctrl o
+set omnifunc=syntaxcomplete#Complete
+
+set tags+=c:\Users\weitz\Desktop\Studium\HCI\Assignment_I\WebApp_Stub\web_application_stub\jqt\tags
 
 "make Vim automatically refresh any files that haven't been edited by Vim. 
 set autoread
@@ -17,6 +23,10 @@ set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 
 "set tags+=C:/Program\ Files/Python27/tags
+
+"verhindern, dass vim komische Sonderzeichen an manchen stellen zeigt
+set encoding=utf-8
+
 
 syntax on
 
@@ -53,7 +63,7 @@ set ignorecase
 set smartcase
 
 "avoid snippets hanging around the gui by setting another font 
-set guifont=Consolas:h13
+set guifont=Consolas:h12
 
 augroup myvimrc
     au!
@@ -146,6 +156,8 @@ call vundle#begin('~/vimfiles/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'tpope/vim-repeat'
 "
 "Plugin 'ctrlpvim/ctrlp.vim'
 "
@@ -154,6 +166,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 
 "Plugin 'AndrewRadev/linediff.vim'
+
+Plugin 'valloric/MatchTagAlways'
 
 Plugin 'Townk/vim-autoclose'
 
